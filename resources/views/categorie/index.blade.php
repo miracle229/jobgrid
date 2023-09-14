@@ -39,9 +39,14 @@
                                                         <button type="submit" class="btn btn-primary">
                                                             <a href="" class="font-size-3 text-gray" style="color:white">Modifier</a>
                                                         </button>
-                                                        <button type="submit" class="btn btn-danger">
-                                                            <a href="" class="font-size-3 text-gray" style="color:white">Supprimer</a>
-                                                        </button>
+                                                        <form action="{{ route('categorie.destroy') }}" method="post">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button type="submit" class="btn btn-danger">
+                                                                <a href="{{ route('categorie.destroy', ['categorie'=>$categ->id]) }}" class="font-size-3 text-gray" style="color:white">Supprimer</a>
+                                                            </button>
+                                                        </form>
+                                    
                                                     </div>
                                                 </div>
                                             </div>
